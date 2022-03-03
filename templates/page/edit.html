@@ -1,0 +1,17 @@
+{% extends 'page/base.html' %}
+
+
+
+{% block content %}
+    <h1>Edit page</h1>
+
+    <form action="" method="POST" >
+        {% csrf_token %}
+        {{ form.as_table}}
+
+        <button type="text">Submit</button>
+    </form>
+
+    
+
+{% endblock content %}

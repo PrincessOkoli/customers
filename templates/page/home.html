@@ -1,0 +1,43 @@
+{% extends 'page/base.html' %}
+
+
+
+{% block content %}
+    <h1>welcome to tech365</h1>
+
+    <button> <a href="/add">Add new customer</a> </button>
+
+
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>last name</td>
+            <td>age</td>
+            <td>phone number</td>
+            <td>Action</td>
+        </tr>
+
+        {% for i in customerlist%}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.first_name}}</td>
+            <td>{{i.Last_name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.phone}}</td>
+            <td> <a href="/detail/{{i.id}}">View</a>
+                <!-- OR -->
+                <!-- <a href="{% url 'detail' i.id %}">detail</a> -->
+                 <a href="/delete/{{i.id}}">Delete </a>
+                 <a href="/edit/{{i.id}}">Edit</a>
+                
+                </td>
+
+        </tr>
+        {% endfor%}
+    </table>
+    
+    <p>   </p>
+    
+    
+{% endblock content %}
